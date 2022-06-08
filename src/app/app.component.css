@@ -1,3 +1,22 @@
 table {
-    width: 100%;
+    width: 80%;
+    height:100px;
+    margin-left: 150px;
+    margin-top: 80px;
   }
+
+  .table1
+  {
+    background-color: aquamarine;
+  }
+
+  .table2
+  {
+    background-color:blanchedalmond;
+  }
+
+  .table2:hover{
+    background-color: aqua;
+  }
+
+  

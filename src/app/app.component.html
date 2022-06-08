@@ -1,35 +1,36 @@
-<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+<h1 style="text-align:center; padding-top: 50px;font-size: 50px;"><strong>Mockup Page Design</strong></h1>
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- Position Column -->
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!-- Domain Column -->
   <ng-container matColumnDef="domain">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by domain"> Domain </th>
-    <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table1"> Domain </th>
+    <td mat-cell *matCellDef="let element" class="table2"> {{element.domain}} </td>
   </ng-container>
 
-  <!-- Name Column -->
+  <!-- Price Column -->
   <ng-container matColumnDef="price">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price"> Price </th>
-    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table1"> Price </th>
+    <td mat-cell *matCellDef="let element" class="table2"> {{element.price}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- clicks Column -->
   <ng-container matColumnDef="clicks">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by clicks"> Clicks </th>
-    <td mat-cell *matCellDef="let element"> {{element.clicks}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table1"> Clicks </th>
+    <td mat-cell *matCellDef="let element"class="table2"> {{element.clicks}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- update Column -->
   <ng-container matColumnDef="update">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by update"> Update </th>
-    <td mat-cell *matCellDef="let element"> {{element.update}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table1"> Update </th>
+    <td mat-cell *matCellDef="let element" class="table2"> {{element.update}} </td>
   </ng-container>
   
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
 </table>
 <mat-paginator [pageSizeOptions]="[5, 10, 20]"
                  showFirstLastButtons

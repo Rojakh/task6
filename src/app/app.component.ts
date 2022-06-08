@@ -1,18 +1,21 @@
 import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort, Sort } from '@angular/material/sort';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatSort } from '@angular/material/sort';
+
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  
 })
 export class AppComponent implements OnInit,AfterViewInit {
   @ViewChild('paginator',{static:true}) paginator!: MatPaginator;
-  @ViewChild('sort',{static:true}) sort!: MatSort;
+  @ViewChild(MatSort) sort!: MatSort;
+  
+  
 
 
   ELEMENT_DATA = [
@@ -40,7 +43,7 @@ export class AppComponent implements OnInit,AfterViewInit {
 
   displayedColumns: string[] =[];
   dataSource: any;
-  constructor(private _liveAnnouncer: LiveAnnouncer){}
+  constructor(){}
 
   ngOnInit(): void {
       this.displayedColumns = ['domain','price','clicks','update'];
@@ -51,15 +54,9 @@ export class AppComponent implements OnInit,AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-  
 
-  announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
-  }
+  
+  
 }
 
 
